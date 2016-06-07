@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <script src="p1.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <title> Formulario consulta </title>
+    <link rel="stylesheet" href="p1.css">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<header>Formulario musical</header>
+<h1> Registro de usuario </h1>
+
+<form action="" method="" enctype="" name="formulario" onsubmit="return confirmaEnvio()">
+
+    <p class="nombres">
+        Nombre y apellidos
+    <p>
+        <input type="text" name="nombre" id="NOM" class="campos" placeholder="Nombre" onblur="mostrar()">
+        <input type="text" name="apellido" id="APELL" placeholder="Apellidos" class="campos">
+    </p>
+    </p>
+
+    <p class="nombres">
+        Email
+    <p>
+        <input type="text" id="email1" placeholder="Email" class="campos" onblur="ValidarEmail()" name="email">
+        <input type="text" id="email2" placeholder="Confirma tu email" class="campos" onblur="CoincideEmail()">
+    <p class="oculto" id="emailCoincide">El email no coincide</p>
+    <p class="oculto" id="emailFormato">El email no cumple con el formato</p>
+    </p>
+    </p>
+
+    <p class="nombres">
+        Contraseña
+    <p>
+        <input type="password" name="psw" id="contraseña" placeholder="Contraseña (Min 6 caract)" class="campos"
+               onblur="LongContra()">
+        <input type="password" id="confcontraseña" placeholder="Confirma tu contraseña" class="campos"
+               onblur="CoincideContra()">
+    <p class="oculto" id="lContra">Contraseña demasiado corta</p>
+    <p class="oculto" id="cContra">La contraseña no coincide</p>
+    </p>
+    </p>
+
+    <p> Fecha de nacimiento</p>
+    <p>
+        <select class="camposFecha" name="dia">
+            <option value="">Día</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+        <select class="camposFecha" name="mes">
+            <option value="">Mes</option>
+            <option value="ENERO">ENERO</option>
+            <option value="FEBRERO">FEBRERO</option>
+            <option value="MARZO">MARZO</option>
+            <option value="ABRIL">ABRIL</option>
+            <option value="MAYO">MAYO</option>
+            <option value="JUNIO">JUNIO</option>
+            <option value="JULIO">JULIO</option>
+            <option value="AGOSTO">AGOSTO</option>
+            <option value="SEPTIEMBRE">SEPTIEMBRE</option>
+            <option value="OCTUBRE">OCTUBRE</option>
+            <option value="NOVIEMBRE">NOVIEMBRE</option>
+            <option value="DICIEMBRE">DICIEMBRE</option>
+        </select>
+
+        <input type="text" id="año" placeholder="Año (AAAA)" class="camposFecha" maxlength="4" onblur="RangoAño()"
+               name="año">
+    <p class="oculto" id="rAño">El año no está dentro del rango permitido (1900-2016)</p>
+
+    <p>Sexo
+    <p>
+        <select class="camposFecha" name="sexo" unselected>
+            <option value="">Sexo</option>
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+            <option value="Otro">Otro</option>
+        </select>
+    </p>
+    </p>
+
+    <p>
+        Teléfono
+    <p>
+        <input type="text" id="telefono" placeholder="9 cifras" class="camposFecha" maxlength="9"
+               onkeypress="return EsNumero(event)"
+               onblur="LongTel()" name="tel">
+    <p class="oculto" id="lTel">El teléfono debe contener 9 cifras numéricas</p>
+    </p>
+    </p>
+
+    <p>¿En qué estilos musicales estás interesad@?
+    <p class="estilosmusicales">
+        <input type="checkbox" name="check[]" value="HipHop"> Hip Hop
+        <input type="checkbox" name="check[]" value="Electronica"> Electrónica
+        <input type="checkbox" name="check[]" value="Pop"> Pop
+    </p>
+    <p class="estilosmusicales">
+        <input type="checkbox" name="check[]" value="Jazz"> Jazz
+        <input type="checkbox" name="check[]" value="Rock"> Rock
+        <input type="checkbox" name="check[]" value="Reggaeton"> Reggaeton
+    </p>
+    <p class="estilosmusicales">
+        <input type="checkbox" name="check[]" value="Hardcore"> Hardcore
+        <input type="checkbox" name="check[]" value="Infantil"> Infantil
+        <input type="checkbox" name="check[]" value="Ópera"> Ópera
+    </p>
+    </p>
+
+    <p>¿Algo que desees añadir?
+    <p>
+        <textarea name="añadir" class="tArea" rows="5" cols="55" placeholder="Introduce tus quejas o sugerencias"
+                  name="añadido"></textarea>
+    </p>
+    </p>
+
+    <p>
+        <input type="radio" name="PHPURL" id="php" value="PHP (p1.php)" class="selbtn"> PHP (p1.php)
+        <input type="radio" name="PHPURL" id="url" value="URL (/~sintprof/p1.php)" class="selbtn"> URL
+        (/~sintprof/p1.php)
+    </p>
+
+    <p>
+        <input type="radio" name="POSTGET" id="post" value="POST" class="selbtn"> POST
+        <input type="radio" name="POSTGET" id="get" value="GET" class="selbtn"> GET
+    </p>
+
+    <p>
+        <input type="radio" name="APPMULTI" id="app" value="application/x-www-form-urlencoded" class="selbtn">
+        application/x-www-form-urlencoded
+        <input type="radio" name="APPMULTI" id="multi" value="multipart/form-data" class="selbtn"> multipart/form-data
+    </p>
+
+    <input type="reset" class="resetsend" value="Borrar todo">
+    <input type="submit" class="resetsend" value="Enviar">
+
+</form>
+
+<footer>
+    <p><span>- Diseñado por Yeray Lage -</span></p>
+    <p><span>2015</span></p>
+</footer>
+
+</body>
+
+</html>
